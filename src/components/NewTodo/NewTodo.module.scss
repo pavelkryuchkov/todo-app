@@ -1,3 +1,5 @@
+$font-size: 16px;
+
 .form {
   display: flex;
   justify-content: space-between;
@@ -9,13 +11,13 @@
     padding: 10px;
     border: none;
     box-shadow: $shadow-sm;
-    font-size: 16px;
+    font-size: $font-size;
   }
 
   button {
     padding: 5px 15px;
     border: 1px solid $color-gray;
-    font-size: 16px;
+    font-size: $font-size;
     background-color: transparent;
     cursor: pointer;
   }

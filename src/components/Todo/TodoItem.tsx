@@ -1,11 +1,8 @@
+import { memo } from 'react';
+
 import { type Todo } from '../../api';
 import { useAppDispatch } from '../../store/hooks';
-import {
-  moveTodoDown,
-  moveTodoUp,
-  removeTodo,
-  toggleCompleted,
-} from '../../store/todosSlice';
+import { moveTodo, removeTodo, toggleCompleted } from '../../store/todosSlice';
 import deleteIcon from '../../assets/images/delete.svg';
 import styles from './TodoItem.module.scss';
 
@@ -13,7 +10,7 @@ interface Props {
   todo: Todo;
 }
 
-function TodoItem({ todo }: Props) {
+const TodoItem = memo(function TodoItem({ todo }: Props) {
   const dispatch = useAppDispatch();
 
   function handleToggleCompleted() {
@@ -25,11 +22,11 @@ function TodoItem({ todo }: Props) {
   }
 
   function handleMoveTodoUp() {
-    dispatch(moveTodoUp(todo.id));
+    dispatch(moveTodo(todo.id, 'up'));
   }
 
   function handleMoveTodoDown() {
-    dispatch(moveTodoDown(todo.id));
+    dispatch(moveTodo(todo.id, 'down'));
   }
 
   return (
@@ -37,7 +34,7 @@ function TodoItem({ todo }: Props) {
       <div className={styles.content}>
         <input
           type="checkbox"
-          name="completeTodo"
+          name="complete-todo"
           checked={todo.completed}
           onChange={handleToggleCompleted}
         />
@@ -61,6 +58,6 @@ function TodoItem({ todo }: Props) {
       </div>
     </div>
   );
-}
+});
 
 export default TodoItem;
