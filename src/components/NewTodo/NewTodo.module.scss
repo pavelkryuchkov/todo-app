@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    box-shadow: $shadow-sm;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 5px 15px;
+    border: 1px solid $color-gray;
+    font-size: 16px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { receivedTodos, selectTodos } from '../../store/todosSlice';
 import { getTodos } from '../../api';
-import TodoItem from '../Todo/Todo';
+import TodoItem from '../Todo/TodoItem';
+import NewTodo from '../NewTodo/NewTodo';
 import styles from './Todos.module.scss';
 
 function Todos() {
@@ -18,6 +20,7 @@ function Todos() {
 
   return (
     <div className={styles.todos}>
+      <NewTodo />
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}

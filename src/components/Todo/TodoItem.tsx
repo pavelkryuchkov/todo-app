@@ -7,7 +7,7 @@ import {
   toggleCompleted,
 } from '../../store/todosSlice';
 import deleteIcon from '../../assets/images/delete.svg';
-import styles from './Todo.module.scss';
+import styles from './TodoItem.module.scss';
 
 interface Props {
   todo: Todo;

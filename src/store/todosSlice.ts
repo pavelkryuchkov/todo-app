@@ -19,7 +19,7 @@ const todosSlice = createSlice({
     },
     addTodo: {
       reducer(state, action: PayloadAction<Todo>) {
-        state.todos.push(action.payload);
+        state.todos.unshift(action.payload);
       },
       prepare(title: string) {
         return {
