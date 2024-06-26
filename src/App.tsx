@@ -1,5 +1,7 @@
+import Todos from './components/Todos/Todos';
+
 function App() {
-  return <h1>todo app</h1>;
+  return <Todos></Todos>;
 }
 
 export default App;

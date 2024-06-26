@@ -1,0 +1,52 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+
+  input {
+    min-width: 16px;
+    min-height: 16px;
+    margin: 0 8px;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  display: block;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &_delete img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}
